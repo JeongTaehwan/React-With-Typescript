@@ -1,25 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Greetings from './Greeting';
 
-function App() {
+const App: React.FC = () => { // React.FC 장점 1. 기본적으로 children props가 탑재되어 있음 2. 값들이 자동완성이 됨
+  const onClick = (name: string) => {
+    console.log(name);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Greetings name="리액트" optional="만나서 반갑습니다." onClick={onClick} />
   );
 }
 
